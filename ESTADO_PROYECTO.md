@@ -12,17 +12,17 @@
    - Se creó el archivo `firebase.json` con la configuración de reglas de Firestore (`firestore.rules`) y opciones de Hosting para SPA (`dist`).
    - Se actualizó `firebase-applet-config.json` con las credenciales reales de la app web de Firebase.
    - Se adaptó `src/lib/firebase.ts` para inicializar la base de datos Firestore por defecto del proyecto.
+   - Se desplegaron con éxito las reglas de seguridad de Firestore y se inicializó la base de datos `(default)` en Firebase.
    - Se respaldaron y sincronizaron todas estas configuraciones en GitHub.
 
 ---
 
 ## Tareas pendientes para la próxima sesión
-1. **Dependencias y Build Local**:
+1. **Dependencias y Ejecución Local**:
    - Ejecutar `npm install` para instalar las dependencias de Node.js (`node_modules`).
-   - Ejecutar `npm run dev` para validar el funcionamiento local en el navegador.
-2. **Configuración en Firebase Console**:
-   - Verificar la creación de la base de datos **Firestore Database** en la consola de Firebase.
-   - Habilitar el proveedor **Google** (y Email si se requiere) en *Authentication > Sign-in method*.
-3. **Despliegue a Producción**:
+   - Ejecutar `npm run dev` para probar y validar la aplicación localmente en el navegador.
+2. **Configuración de Autenticación en Firebase Console**:
+   - Habilitar el proveedor **Google** (y Email/Password si aplica) en *Authentication > Sign-in method*.
+3. **Despliegue a Producción (Hosting)**:
    - Ejecutar `npm run build` para generar el directorio `dist/`.
-   - Realizar el despliegue completo de la aplicación web a Firebase Hosting con `firebase deploy`.
+   - Desplegar la aplicación web a Firebase Hosting con `firebase deploy --only hosting`.

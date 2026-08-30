@@ -1,0 +1,115 @@
+{
+  "entities": {
+    "ShoppingItem": {
+      "title": "Shopping Item",
+      "description": "An item to buy in the shopping list",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner of the item"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "quantity": {
+          "type": "number",
+          "description": "Quantity to buy"
+        },
+        "checked": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": ["userId", "name", "quantity", "checked", "createdAt", "updatedAt"]
+    },
+    "InventoryItem": {
+      "title": "Inventory Item",
+      "description": "An item in the user's pantry/inventory",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "category": {
+          "type": "string",
+          "maxLength": 50
+        },
+        "quantity": {
+          "type": "number"
+        },
+        "minStock": {
+          "type": "number"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        }
+      },
+      "required": ["userId", "name", "quantity", "createdAt", "updatedAt"]
+    },
+    "PurchaseReceipt": {
+      "title": "Purchase Receipt",
+      "description": "A record of a past purchase",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "storeName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "totalItems": {
+          "type": "number"
+        },
+        "totalPrice": {
+          "type": "number"
+        },
+        "date": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": ["userId", "storeName", "totalItems", "totalPrice", "date", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}/shoppingList/{itemId}": {
+      "schema": {
+        "$ref": "#/entities/ShoppingItem"
+      },
+      "description": "Shopping list items for a user"
+    },
+    "users/{userId}/inventory/{itemId}": {
+      "schema": {
+        "$ref": "#/entities/InventoryItem"
+      },
+      "description": "Inventory items for a user"
+    },
+    "users/{userId}/history/{receiptId}": {
+      "schema": {
+        "$ref": "#/entities/PurchaseReceipt"
+      },
+      "description": "Purchase history for a user"
+    }
+  }
+}

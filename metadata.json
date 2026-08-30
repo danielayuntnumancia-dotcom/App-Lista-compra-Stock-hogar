@@ -1,0 +1,6 @@
+{
+  "name": "PantrySync",
+  "description": "Gestor de Compra e Inventario Doméstico",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

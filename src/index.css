@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #0a0a0a;
+  --color-surface-dim: #0a0a0a;
+  --color-surface-bright: #171717;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: rgba(255, 255, 255, 0.02);
+  --color-surface-container: rgba(255, 255, 255, 0.05);
+  --color-surface-container-high: rgba(255, 255, 255, 0.08);
+  --color-surface-container-highest: rgba(255, 255, 255, 0.1);
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: rgba(255, 255, 255, 0.5);
+  --color-outline: rgba(255, 255, 255, 0.1);
+  --color-outline-variant: rgba(255, 255, 255, 0.05);
+  --color-surface-tint: #2563eb;
+  --color-primary: #2563eb;
+  --color-on-primary: #ffffff;
+  --color-primary-container: rgba(37, 99, 235, 0.2);
+  --color-on-primary-container: #60a5fa;
+  --color-secondary: #a1a1aa;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: rgba(255, 255, 255, 0.05);
+  --color-on-secondary-container: #ffffff;
+  --color-tertiary: #f3f4f6;
+  --color-on-tertiary: #000000;
+  --color-tertiary-container: rgba(255, 255, 255, 0.1);
+  --color-on-tertiary-container: #ffffff;
+  --color-error: #ef4444;
+  --color-on-error: #ffffff;
+  --color-error-container: rgba(239, 68, 68, 0.2);
+  --color-on-error-container: #f87171;
+  --color-background: #0a0a0a;
+  --color-on-background: #ffffff;
+  
+  --font-headline-md: Inter, sans-serif;
+  --font-display-lg: Inter, sans-serif;
+  --font-label-lg: Inter, sans-serif;
+  --font-body-lg: Inter, sans-serif;
+  --font-body-md: Inter, sans-serif;
+  --font-title-lg: Inter, sans-serif;
+  --font-title-mobile: Inter, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container;
+  }
+}

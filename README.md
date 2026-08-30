@@ -1,0 +1,1 @@
+# App-Lista-compra-Stock-hogar
